@@ -9,8 +9,8 @@ import { Subject, Observable } from 'rxjs/Rx';
 // settings
 const numCPUs: number = cpus().length;
 const workerScriptPath: string = process.argv[2]
-  ? path.resolve(__dirname, process.argv[2])
-  : path.resolve(__dirname, 'worker.js');
+  ? path.join(path.resolve(), process.argv[2])
+  : path.join(path.resolve(), 'worker.js');
 
 
 ////////////////////////////////////////////////////////////

@@ -1,6 +1,6 @@
 {
   "name": "easy-cluster-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -9,18 +9,15 @@
     "tsc:w": "tsc --watch",
     "build": "npm run clean && npm run tsc",
     "build:w": "npm run clean && npm run tsc:w",
-    "start": "npm run build && node index.js",
+    "start": "npm run build && node dist/index.js",
     "ts": "ts-node",
     "prepublish": "npm run build"
   },
   "keywords": [],
   "files": [
     "dist",
-    "src",
     "package.json",
-    "README.md",
-    "tsconfig.json",
-    "tslint.json"
+    "README.md"
   ],
   "author": "Tomohiro Noguchi",
   "license": "MIT",
