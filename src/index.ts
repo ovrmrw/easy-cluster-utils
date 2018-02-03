@@ -38,12 +38,12 @@ export class ClusterMaster<R> {
     this.connectWorkers(options);
   }
 
-  executeList<T>(list: T[], command: string): Promise<R[]> {
+  executeList<T>(list: T[], type: string): Promise<R[]> {
     this.workers.forEach((worker, index) => {
       const [from, to] = this.getFromTo(index, list.length);
       const message = {
-        command,
-        value: list.slice(from, to)
+        type,
+        payload: list.slice(from, to)
       };
       worker.sendToWorker(message);
     });
@@ -158,8 +158,8 @@ function flatten<T>(nestedArray: T[][]): T[] {
 ////////////////////////////////////////////////////////////
 // types
 export interface CommandMessage<T> {
-  command: string;
-  value: T;
+  type: string;
+  payload: T;
 }
 
 export interface ResultMessage<T> {
