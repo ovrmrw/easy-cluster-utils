@@ -1,0 +1,36 @@
+{
+  "name": "easy-cluster-utils",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "tsc": "tsc",
+    "tsc:w": "tsc --watch",
+    "build": "npm run clean && npm run tsc",
+    "build:w": "npm run clean && npm run tsc:w",
+    "start": "npm run build && node index.js",
+    "ts": "ts-node",
+    "prepublish": "npm run build"
+  },
+  "keywords": [],
+  "files": [
+    "dist",
+    "src",
+    "package.json",
+    "README.md",
+    "tsconfig.json",
+    "tslint.json"
+  ],
+  "author": "Tomohiro Noguchi",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^8.0.33",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
+  },
+  "peerDependencies": {
+    "rxjs": "^5.0.0"
+  }
+}
