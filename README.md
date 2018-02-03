@@ -11,4 +11,4 @@ $ npm install easy-cluster-utils
 
 ## How to use
 
-Qiita: https://qiita.com/ovrmrw/items/865aebb8d6e16a99bc59 (Japanese)
+Qiita: https://qiita.com/ovrmrw/items/865aebb8d6e16a99bc59
