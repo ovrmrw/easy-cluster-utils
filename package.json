@@ -1,6 +1,6 @@
 {
   "name": "easy-cluster-utils",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "build:w": "npm run clean && npm run tsc:w",
     "start": "npm run build && node index.js",
     "ts": "ts-node",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "keywords": [
     "cluster",
@@ -39,5 +39,6 @@
   },
   "peerDependencies": {
     "rxjs": "^5.0.0"
-  }
+  },
+  "worker": "dist/worker.js"
 }

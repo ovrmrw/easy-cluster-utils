@@ -1,16 +1,25 @@
 import * as cluster from 'cluster';
 import { Worker } from 'cluster';
 import * as path from 'path';
+import * as fs from 'fs';
 import { cpus } from 'os';
 import { Subject, Observable } from 'rxjs/Rx';
 
+let worker: string = '';
+try {
+  const packageJson: string = fs.readFileSync(path.join(path.resolve(), 'package.json')).toString();
+  worker = JSON.parse(packageJson).worker;
+  if (!worker) {
+    throw new Error('"worker" property is not defined in package.json');
+  }
+} catch (err) {
+  throw err;
+}
 
 ////////////////////////////////////////////////////////////
 // settings
 const numCPUs: number = cpus().length;
-const workerScriptPath: string = process.argv[2]
-  ? path.join(path.resolve(), process.argv[2])
-  : path.join(path.resolve(), 'worker.js');
+const workerScriptPath: string = worker;
 
 
 ////////////////////////////////////////////////////////////
